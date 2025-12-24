@@ -8,9 +8,6 @@
 
 ```
 agent_core.py  →  Your agent logic (framework-agnostic)
-     ↑
-agent.py       →  Deployment wrapper (Cycls)
-     
 evaluator.py   →  Automated test suite + LLM judge
 ```
 
@@ -22,10 +19,7 @@ Keep your core logic **framework-free**:
 - Pure Python - testable without deployment infrastructure
 - Easy to swap LLM providers or tools
 
-### 2. `agent.py` - Thin Deployment Wrapper  
-Minimal wrapper that deploys core logic to your platform of choice.
-
-### 3. `evaluator.py` - Automated Evaluation
+### 2. `evaluator.py` - Automated Evaluation
 Test suite with:
 - **Heuristic checks** - deterministic validations (tool called? has table? has sources?)
 - **LLM judge** - blind scoring on relevance, quality, safety, format
@@ -46,10 +40,6 @@ EXA_API_KEY=...
 ## Run
 
 ```bash
-# Deploy agent
-python agent.py
-
-# Run evaluation
 python evaluator.py
 # Enter test subject (e.g. "Spotify") → runs 10 tests with full report
 ```
