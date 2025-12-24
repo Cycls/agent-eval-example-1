@@ -1,6 +1,3 @@
-"""
-Market Agent Evaluator v3 - Tests agent_core.py directly (no cycls dependency)
-"""
 import cycls
 import os
 import json
@@ -541,3 +538,4 @@ async def evaluator_main(context):
     yield f"\n\n✅ **Evaluation Complete!**"
 
 agent.deploy(prod=False)
+
